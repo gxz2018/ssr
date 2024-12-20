@@ -73,14 +73,14 @@ fi
 	read -p "是否安装被控端文件(首次执行必须安装)[y/N]" down_files
 	if [[ "$down_files" =~ ^[yY]$ ]]; then
 		echo "正在下载gost2.11版本"
-		wget https://github.com/gxz2018/20231201/raw/refs/heads/master/gost
-		chmod +x /gost
+		wget -O /usr/bin/gost https://raw.githubusercontent.com/gxz2018/20231201/refs/heads/master/gost
+		chmod +x /usr/bin/gost
 		echo "正在下载被控端"
-		wget https://github.com/gxz2018/20231201/raw/refs/heads/master/ip_table
-		chmod +x /ip_table
+		wget -O /usr/bin/gost https://raw.githubusercontent.com/gxz2018/20231201/refs/heads/master/gost
+		chmod +x /usr/bin/ip_table
 		echo "正在下载brook"
-		wget https://github.com/gxz2018/20231201/raw/refs/heads/master/brook
-		chmod +x /brook
+		wget -O /usr/bin/brook https://raw.githubusercontent.com/gxz2018/20231201/refs/heads/master/brook
+		chmod +x /usr/bin/brook
 	fi
 	echo "转发端初始完成！请手动 crontab -e 添加定时任务！"
 }
@@ -96,11 +96,11 @@ beikong1_chushihua(){
 	read -p "是否下载被控端文件(首次执行必须安装)[y/N]" down_files_1
 	if [[ "$down_files_1" =~ ^[yY]$ ]]; then
 		echo "正在下载gost2.11版本"
-		wget https://github.com/gxz2018/20231201/raw/refs/heads/master/gost
-		chmod +x /gost
+		wget -O /usr/bin/gost https://raw.githubusercontent.com/gxz2018/20231201/refs/heads/master/gost
+		chmod +x /usr/bin/gost
 		echo "正在下载被控端"
-		wget https://github.com/gxz2018/20231201/raw/refs/heads/master/ip_table
-		chmod +x /iptables_gost
+		wget -O /usr/bin/iptables_gost https://raw.githubusercontent.com/gxz2018/20231201/refs/heads/master/iptables_gost
+		chmod +x /usr/bin/iptables_gost
 	fi
 	echo "被控端端初始完成！请手动 crontab -e 添加定时任务！"
 }
